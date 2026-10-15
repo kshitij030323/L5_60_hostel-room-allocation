@@ -1,0 +1,71 @@
+Run started:2026-10-15 05:26:59.602875+00:00
+
+Test results:
+>> Issue: [B506:yaml_load] Use of unsafe yaml load. Allows instantiation of arbitrary objects. Consider yaml.safe_load().
+   Severity: Medium   Confidence: High
+   CWE: CWE-20 (https://cwe.mitre.org/data/definitions/20.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b506_yaml_load.html
+   Location: ./hostel_allocation.py:21:13
+20	def loadConfig(text=CONFIG):
+21	    config = yaml.load(text, Loader=yaml.Loader)
+22	    for block in config["blocks"]:
+
+--------------------------------------------------
+>> Issue: [B311:blacklist] Standard pseudo-random generators are not suitable for security/cryptographic purposes.
+   Severity: Low   Confidence: High
+   CWE: CWE-330 (https://cwe.mitre.org/data/definitions/330.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/blacklists/blacklist_calls.html#b311-random
+   Location: ./hostel_allocation.py:56:11
+55	def roomLottery(student_ids):
+56	    return random.sample(student_ids, len(student_ids))
+57	
+
+--------------------------------------------------
+>> Issue: [B106:hardcoded_password_funcarg] Possible hardcoded password: 'Hostel@123'
+   Severity: Low   Confidence: Medium
+   CWE: CWE-259 (https://cwe.mitre.org/data/definitions/259.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b106_hardcoded_password_funcarg.html
+   Location: ./hostel_allocation.py:66:11
+65	def connectWardenDb():
+66	    return sqlite_connect(host="localhost", user="warden", password="Hostel@123")
+67	
+
+--------------------------------------------------
+>> Issue: [B612:logging_config_insecure_listen] Use of insecure logging.config.listen detected.
+   Severity: Medium   Confidence: High
+   CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b612_logging_config_insecure_listen.html
+   Location: ./hostel_allocation.py:72:11
+71	def startRemoteLogConfig():
+72	    return logging.config.listen(9999)
+73	
+
+--------------------------------------------------
+>> Issue: [B201:flask_debug_true] A Flask app appears to be run with debug=True, which exposes the Werkzeug debugger and allows the execution of arbitrary code.
+   Severity: High   Confidence: Medium
+   CWE: CWE-94 (https://cwe.mitre.org/data/definitions/94.html)
+   More Info: https://bandit.readthedocs.io/en/1.9.4/plugins/b201_flask_debug_true.html
+   Location: ./hostel_allocation.py:80:4
+79	def runPortal():
+80	    app.run(debug=True)
+81	
+
+--------------------------------------------------
+
+Code scanned:
+	Total lines of code: 84
+	Total lines skipped (#nosec): 0
+	Total potential issues skipped due to specifically being disabled (e.g., #nosec BXXX): 0
+
+Run metrics:
+	Total issues (by severity):
+		Undefined: 0
+		Low: 2
+		Medium: 2
+		High: 1
+	Total issues (by confidence):
+		Undefined: 0
+		Low: 0
+		Medium: 2
+		High: 3
+Files skipped (0):

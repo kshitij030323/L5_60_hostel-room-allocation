@@ -1,0 +1,20 @@
+hostel_allocation.py:1:1: F401 'os' imported but unused
+hostel_allocation.py:2:1: F401 'sys' imported but unused
+hostel_allocation.py:20:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:25:80: E501 line too long (92 > 79 characters)
+hostel_allocation.py:29:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:30:8: E721 do not compare types, for exact checks use `is` / `is not`, for instance checks use `isinstance()`
+hostel_allocation.py:41:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:47:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:52:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:55:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:58:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:65:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:66:80: E501 line too long (81 > 79 characters)
+hostel_allocation.py:68:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:71:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:74:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:79:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:82:1: E302 expected 2 blank lines, found 1
+hostel_allocation.py:95:80: E501 line too long (116 > 79 characters)
+hostel_allocation.py:101:1: E305 expected 2 blank lines after class or function definition, found 1
